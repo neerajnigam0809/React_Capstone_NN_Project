@@ -1,0 +1,33 @@
+/* Apply styles to all <img> elements */
+img{
+  /* Set the width to 50% of the viewport width (vw) */
+  width: 50vw;
+  /* Set the height to 100% of the viewport height (vh) */
+  height: 100vh;
+  cursor: pointer;
+}
+
+/* Define styles for elements with the class 'bottom' */
+.bottom{
+  /* Set the position to absolute */
+  position: absolute;
+  /* Position the element 4% from the bottom of its containing element */
+  bottom: 4vh;
+  /* Position the element 2% from the left of its containing element */
+  left: 5vw;
+  /* Set the text color to white */
+  color: white;
+  /* Set the font weight to 900 (very bold) */
+  font-weight: 900;
+  /* Set a specific width and height for the element */
+  width: 695px;
+  height: 143px;
+  /* Set the font size to 55 pixels */
+  font-size: 55px;
+  /* Set the font family to "Roboto" */
+  font-family: Roboto;
+  font-size: 55px;
+  line-height: 78px;
+  letter-spacing: 0.04em;
+  
+}

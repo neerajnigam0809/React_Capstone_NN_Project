@@ -1,0 +1,159 @@
+/* Style for the main container 'body' */
+.body {
+  /* Set the width to 50% of the viewport width (vw) */
+  width: 50vw;
+  /* Set text color to white */
+  color: white;
+  /* Add padding around the content */
+  padding: 6vw;
+  /* Set background color */
+  background-color: #000000;
+  /* Set the height to 100% of the viewport height (vh) */
+  height: 100vh;
+  /* Make sure padding doesn't affect the total width */
+  box-sizing: border-box;
+}
+
+/* Style for paragraphs inside 'body' */
+.body p {
+  /* Set font size */
+  font-size: 1.5rem;
+  /* Add margin at the top of each paragraph */
+  margin-top: 12px;
+  /* Center-align text */
+  text-align: center;
+  
+}
+
+/* Style for the 'super' class inside 'body' */
+.body .super {
+  /* Set text color to a specific green color */
+  color: #72DB73;
+  /* Set font size */
+  font-size: 67px;
+  /* Set font weight to 400 (normal) */
+  font-weight: 400;
+  /* Use a specific font family */
+  font-family: 'Single Day';
+  /* Add margin at the bottom of the element */
+  margin-bottom: 15px;
+  /* Center-align text */
+  text-align: center;
+}
+
+/* Style for form inputs */
+form input {
+  /* Display inputs as block-level elements */
+  display: block;
+  /* Add margin around inputs and center them horizontally */
+  margin: 16px auto;
+  /* Set padding for inputs */
+  padding: 12px;
+  /* Set the width to 70% of the container */
+  width: 70%;
+  /* Set background color */
+  background-color: #292929;
+  /* Remove borders */
+  border: none;
+  /* Add border radius for rounded corners */
+  border-radius: 6px;
+  /* Set text color to white */
+  color: white;
+}
+
+/* Style for labels inside the form */
+form label {
+  /* Display labels as flex containers with row direction */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 12px;
+  color: rgba(124, 124, 124, 1);
+  font-family: DM Sans;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.02em;
+}
+
+/* Style for inputs inside labels */
+form label input {
+  /* Reset margin and padding for label inputs */
+  margin: 1px;
+  padding: 0px;
+  /* Set a specific width for label inputs */
+  width: 27px;
+  /* Adjust the position of label inputs */
+  margin-left: -25.5%;
+  margin-bottom: 0%;
+  cursor: pointer;
+}
+
+/* Style for the form button */
+form button {
+  /* Remove box shadow */
+  box-shadow: none;
+  /* Set the width to 70% of the container */
+  width: 73%;
+  /* Add margin at the top of the button */
+  margin-top: 20px;
+  /* Apply border radius for rounded corners */
+  border-radius: 24px;
+  /* Set padding for the button */
+  padding: 10px 12px;
+  /* Set text color to white */
+  color: white;
+  /* Set background color to a specific green color */
+  background-color: #72DB73;
+  /* Remove borders */
+  border: none;
+  /* Adjust the button's position */
+  margin-left: 13.4%;
+}
+
+/* Style for error messages */
+.error {
+  /* Set text color to red */
+  color: red;
+  /* Set font size for error messages */
+  font-size: 14px;
+  /* Adjust the left margin for error messages */
+  margin-left: 14%;
+}
+
+/* Style for checkbox error messages */
+.Cerror {
+  /* Set text color to red */
+  color: red;
+  /* Set font size for checkbox error messages */
+  font-size: 14px;
+  /* Adjust the left margin for checkbox error messages */
+  margin-left: 14%;
+}
+
+/* Style for the footer section */
+.footer p {
+  /* Set font size for footer text */
+  color: rgba(124, 124, 124, 1);
+  width: 73%;
+  margin: 12px auto;
+  text-align: left;
+  line-height: 1.2rem;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 26px;
+  letter-spacing: 0.02em;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    .form-section {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.checkbox{
+  color: rgba(124, 124, 124, 1);
+}
