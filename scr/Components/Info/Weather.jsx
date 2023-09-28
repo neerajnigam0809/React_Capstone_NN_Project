@@ -1,0 +1,87 @@
+// Import necessary dependencies
+import { useEffect, useState } from "react";
+
+// Define the 'Weather' functional component
+const Weather = () => {
+  // Define state variables for date, time, and weather data
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
+  const [weather, setWeather] = useState(false);
+
+  // Fetch weather data from the API and update the 'weather' state
+  useEffect(() => {
+    const fetchWeather = async () => {
+      await fetch("http://api.weatherapi.com/v1/current.json?key=987de39fe8924052ada80850232502&q=London&aqi=no")
+        .then(async (data) => await data.json())
+        .then((data) => setWeather(data));
+    };
+    fetchWeather();
+  }, []);
+
+  // Update the 'time' state with the current time
+  useEffect(() => {
+    const date = new Date();
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var ampm = hours >= 12 ? 'pm' : 'am';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    var strTime = hours + ':' + minutes + ' ' + ampm;
+    setTime(strTime);
+  });
+
+  // Update the 'date' state with the current date
+  useEffect(() => {
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    let mm = today.getMonth() + 1; // Months start at 0!
+    let dd = today.getDate();
+
+    if (dd < 10) dd = '0' + dd;
+    if (mm < 10) mm = '0' + mm;
+
+    const formattedToday = dd + '-' + mm + '-' + yyyy;
+    setDate(formattedToday);
+  });
+
+  return (
+    <div style={{ width: "30.5vw", minHeight: "20vh", background: '#101744', borderRadius: "12px", marginTop: "5px" }}>
+      <div style={{ height: "7vh", background: "#FF4ADE", borderRadius: "12px", color: "white", display: "flex", justifyContent: "space-evenly", alignItems: "center", fontSize: "2rem" }}>
+        <span>{date}</span>
+        <span>{time}</span>
+      </div>
+      <div>
+        {/* Display weather information */}
+        {weather ? (
+          <div style={{ display: "flex", color: "white", alignItems: "center", justifyContent: "space-evenly" }}>
+            <div>
+              {/* Display weather icon and condition */}
+              <img src={weather.current.condition.icon} style={{ marginTop: "15px", width: "50px", height: "50px" }} alt="Weather Icon" />
+              <p style={{ fontSize: "25px" }}>{weather.current.condition.text}</p>
+            </div>
+            <div>
+              {/* Display temperature, pressure */}
+              <p style={{ marginBottom: "12px", fontSize: "30px", marginTop: "10px" }}><span>{weather.current.temp_c}</span>°C</p>
+              <p style={{ fontSize: "25px" }}>{weather.current.pressure_mb} pressure</p>
+            </div>
+            <div>
+              {/* Display wind speed, humidity */}
+              <p style={{ marginBottom: "12px", fontSize: "30px", marginTop: "10px" }}>{weather.current.wind_kph} wind</p>
+              <p style={{ fontSize: "25px" }}>{weather.current.humidity} humidity</p>
+            </div>
+          </div>
+        ) : (
+          <></>
+        )}
+      </div>
+    </div>
+  );
+}
+
+// Export the 'Weather' component as the default export
+export default Weather;
+
+
+
+
